@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmesa S.R.L.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007c0f',
+                        secondary: '#898989'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="InmesaLogo.png" alt="Inmesa Digital Logo" class="h-12 w-auto">
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-primary transition-colors" data-es="Inicio" data-pt="Início">Inicio</a>
+                    <a href="#por-que-elegirnos" class="text-gray-700 hover:text-primary transition-colors" data-es="¿Por qué elegirnos?" data-pt="Por que nos escolher?">¿Por qué elegirnos?</a>
+                    <a href="#destacados" class="text-gray-700 hover:text-primary transition-colors" data-es="Destacados" data-pt="Destaques">Destacados</a>
+                    <a href="#servicios" class="text-gray-700 hover:text-primary transition-colors" data-es="Servicios" data-pt="Serviços">Servicios</a>
+                    <a href="#contacto" class="text-gray-700 hover:text-primary transition-colors" data-es="Contacto" data-pt="Contato">Contacto</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selector (moved to right) -->
+                    <div class="relative">
+                        <select id="language-selector" class="bg-gray-100 border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option value="es" selected>🇪🇸 ES</option>
+                            <option value="pt">🇧🇷 PT</option>
+                        </select>
+                    </div>
+                    <button class="md:hidden text-gray-700 hover:text-primary" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden bg-white border-t hidden" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#inicio" class="text-gray-700 hover:text-primary transition-colors" data-es="Inicio" data-pt="Início">Inicio</a>
+                    <a href="#por-que-elegirnos" class="text-gray-700 hover:text-primary transition-colors" data-es="¿Por qué elegirnos?" data-pt="Por que nos escolher?">¿Por qué elegirnos?</a>
+                    <a href="#destacados" class="text-gray-700 hover:text-primary transition-colors" data-es="Destacados" data-pt="Destaques">Destacados</a>
+                    <a href="#servicios" class="text-gray-700 hover:text-primary transition-colors" data-es="Servicios" data-pt="Serviços">Servicios</a>
+                    <a href="#contacto" class="text-gray-700 hover:text-primary transition-colors" data-es="Contacto" data-pt="Contato">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Carousel -->
+    <section id="inicio" class="relative h-96 md:h-[500px] overflow-hidden">
+        <div class="carousel-container relative w-full h-full">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active absolute inset-0 flex items-center justify-center">
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('stihlBanner.png'); filter: brightness(0.7);"></div>
+                <!-- Overlay -->
+                <!-- Content -->
+                <div class="relative z-10 text-center text-white">
+                    <h1 class="text-6xl md:text-8xl font-bold mb-6" data-es="CALIDAD" data-pt="QUALIDADE">CALIDAD</h1>
+                    <p class="text-xl md:text-2xl" data-es="Herramientas profesionales para cada proyecto" data-pt="Ferramentas profissionais para cada projeto">Herramientas profesionales para cada proyecto</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-slide absolute inset-0 flex items-center justify-center">
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('construcciónBanner.jpg'); filter: brightness(0.7);"></div>
+                <!-- Overlay -->
+                <!-- Content -->
+                <div class="relative z-10 text-center text-white">
+                    <h1 class="text-6xl md:text-8xl font-bold mb-6" data-es="INNOVACIÓN" data-pt="INOVAÇÃO">INNOVACIÓN</h1>
+                    <p class="text-xl md:text-2xl" data-es="Tecnología avanzada en cada herramienta" data-pt="Tecnologia avançada em cada ferramenta">Tecnología avanzada en cada herramienta</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-slide absolute inset-0 flex items-center justify-center">
+                <!-- Background Image -->
+                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('metalurgicaBanner.jpg'); filter: brightness(0.7);"></div>
+                <!-- Overlay -->
+                <!-- Content -->
+                <div class="relative z-10 text-center text-white">
+                    <h1 class="text-6xl md:text-8xl font-bold mb-6" data-es="CONFIANZA" data-pt="CONFIANÇA">CONFIANZA</h1>
+                    <p class="text-xl md:text-2xl" data-es="Más de 30 años respaldando tu trabajo" data-pt="Mais de 30 anos apoiando seu trabalho">Más de 30 años respaldando tu trabajo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Carousel Indicators -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button class="carousel-indicator active w-3 h-3 bg-white rounded-full opacity-50" data-slide="0"></button>
+            <button class="carousel-indicator w-3 h-3 bg-white rounded-full opacity-50" data-slide="1"></button>
+            <button class="carousel-indicator w-3 h-3 bg-white rounded-full opacity-50" data-slide="2"></button>
+        </div>
+    </section>
+
+    <!-- Productos Destacados 200 alto x 400 ancho px -->
+<section id="destacados" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-es="Productos Destacados" data-pt="Produtos em Destaque">Productos Destacados</h2>
+            <p class="text-secondary text-lg" data-es="Descubre nuestra selección de herramientas premium" data-pt="Descubra nossa seleção de ferramentas premium">Descubre nuestra selección de herramientas premium</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Producto 1 -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                <div class="relative">
+                    <img src="DestacadoTaladro.png" alt="Martillo Profesional" class="h-48 w-full object-cover">
+                    <div class="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded text-sm font-bold" data-es="PREMIUM" data-pt="PREMIUM">
+                        PREMIUM
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2" data-es="Taladro Atornillador" data-pt="Furadeira Parafusadeira">Taladro Atornillador</h3>
+                    <p class="text-secondary text-sm mb-3" data-es="Taladro Atornillador Inalámbrico 20v 2,0 Ah Hyundai Hycid20" data-pt="Furadeira/Parafusadeira sem fio Hyundai Hycid20 20V 2.0Ah">Taladro Atornillador Inalámbrico 20v 2,0 Ah Hyundai Hycid20</p>
+                    
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                <div class="relative">
+                    <img src="DestacadoSierra.png" alt="Set Destornilladores Pro" class="h-48 w-full object-cover">
+                    <div class="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded text-sm font-bold" data-es="NUEVO" data-pt="NOVO">
+                        NUEVO
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2" data-es="Sierra Circular" data-pt="Serra Circular">Sierra Circular</h3>
+                    <p class="text-secondary text-sm mb-3" data-es="SIERRA CIRCULAR 20V 190 mm S/C S/Bateria/Cargador" data-pt="SERRA CIRCULAR 20V 190mm S/C S/Bateria/Carregador.">SIERRA CIRCULAR 20V 190 mm S/C S/Bateria/Cargador</p>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                <div class="relative">
+                    <img src="DestacadoMotosierra.png" alt="Llave Inglesa Ajustable" class="h-48 w-full object-cover">
+                    <div class="absolute top-2 right-2 bg-orange-500 text-white px-2 py-1 rounded text-sm font-bold" data-es="POPULAR" data-pt="POPULAR">
+                        POPULAR
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2" data-es="Motosierra Ms 250" data-pt="Motoserra Ms 250">Motosierra Ms 250</h3>
+                    <p class="text-secondary text-sm mb-3" data-es="Motosierra Stihl Ms 250 vaina 40 cm 45cc ; Potencia : 3.1 CV / 2.3 Kw ; Cilindrada: 45.4 cc" data-pt="Motosserra Stihl Ms 250 40 cm 45cc; Potência: 3,1 HP / 2,3 Kw; Deslocamento: 45,4 cc">Motosierra Stihl Ms 250 vaina 40 cm 45cc ; Potencia : 3.1 CV / 2.3 Kw ; Cilindrada: 45.4 cc</p>
+                </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="bg-gray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                <div class="relative">
+                    <img src="DestacadoCompresor.png" alt="Taladro Inalámbrico Pro" class="h-48 w-full object-cover">
+                    <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded text-sm font-bold" data-es="DESTACADO" data-pt="DESTAQUE">
+                        DESTACADO
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2" data-es="Compresor 50Lts" data-pt="Compressor 50Lts">Compresor 50Lts</h3>
+                    <p class="text-secondary text-sm mb-3" data-es="Motocompresor 50Lts 2HP HYAC50D Hyundai" data-pt="Compressor 50Lts 2HP HYAC50D Hyundai">Motocompresor 50Lts 2HP HYAC50D Hyundai</p>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-8">
+            <a href="https://wa.me/59891079154?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20productos" target="_blank" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-flex items-center space-x-2">
+                <i class="fab fa-whatsapp text-xl"></i>
+                <span data-es="Consultar en WhatsApp" data-pt="Consultar no WhatsApp">Consultar en WhatsApp</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Modal para ampliar imágenes -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+    <div class="relative max-w-4xl max-h-full p-4">
+        <button id="closeModal" class="absolute top-2 right-2 text-white text-3xl hover:text-gray-300 z-10">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="modalImage" src="/placeholder.svg" alt="" class="max-w-full max-h-full object-contain rounded-lg">
+        <div class="text-center mt-4">
+            <h3 id="modalTitle" class="text-white text-xl font-semibold"></h3>
+        </div>
+    </div>
+</div>
+
+    <!-- ¿Por qué elegirnos? (antes Categorías) -->
+    <section id="por-que-elegirnos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-es="¿Por qué elegirnos?" data-pt="Por que nos escolher?">¿Por qué elegirnos?</h2>
+                <p class="text-secondary text-lg" data-es="Razones para confiar en nosotros" data-pt="Razões para confiar em nós">Razones para confiar en nosotros</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Amplio en Stock -->
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-flex items-center justify-center mb-4">
+                        <i class="fas fa-boxes text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3" data-es="Amplio en Stock" data-pt="Amplo Estoque">Amplio en Stock</h3>
+                    <p class="text-secondary" data-es="Amplio stock en maquinaria, herramientas y repuestos para la industria, construcción y el hogar" data-pt="Amplo estoque em máquinas, ferramentas e peças de reposição para indústria, construção e lar">Amplio stock en maquinaria, herramientas y repuestos para la industria, construcción y el hogar</p>
+                </div>
+                
+                <!-- Asesoramiento personalizado -->
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-flex items-center justify-center mb-4">
+                        <i class="fas fa-user-tie text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3" data-es="Asesoramiento personalizado" data-pt="Assessoria personalizada">Asesoramiento personalizado</h3>
+                    <p class="text-secondary" data-es="Equipo técnico especializado con gran vocación de servicio esperan para asesorarte" data-pt="Equipe técnica especializada com grande vocação de serviço espera para assessorá-lo">Equipo técnico especializado con gran vocación de servicio esperan para asesorarte</p>
+                </div>
+                
+                <!-- Servicio técnico -->
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-flex items-center justify-center mb-4">
+                        <i class="fas fa-tools text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3" data-es="Servicio técnico" data-pt="Serviço técnico">Servicio técnico</h3>
+                    <p class="text-secondary" data-es="Servicio técnico y servicio post venta de las marcas representadas" data-pt="Serviço técnico e serviço pós-venda das marcas representadas">Servicio técnico y servicio post venta de las marcas representadas</p>
+                </div>
+                
+                <!-- Envíos a todo el país -->
+                <div class="bg-white p-6 rounded-lg text-center hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="bg-primary bg-opacity-10 p-4 rounded-full inline-flex items-center justify-center mb-4">
+                        <i class="fas fa-shipping-fast text-4xl text-primary"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3" data-es="Envíos a todo el país" data-pt="Envios para todo o país">Envíos a todo el país</h3>
+                    <p class="text-secondary" data-es="Contáctanos por Whatsapp para realizar la compra y la enviamos a cualquier parte del país" data-pt="Contate-nos pelo Whatsapp para fazer a compra e enviamos para qualquer parte do país">Contáctanos por Whatsapp para realizar la compra y la enviamos a cualquier parte del país</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios (actualizado) -->
+    <section id="servicios" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-es="Nuestros Servicios" data-pt="Nossos Serviços">Nuestros Servicios</h2>
+                <p class="text-secondary text-lg" data-es="Soluciones integrales para todos los sectores" data-pt="Soluções integrais para todos os setores">Soluciones integrales para todos los sectores</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Industria -->
+                <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-industry text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-es="Industria" data-pt="Indústria">Industria</h3>
+                    </div>
+                    <p class="text-secondary" data-es="Conexiones hidráulicas, bombas de agua, tornería, generadores, taller de montaje." data-pt="Conexões hidráulicas, bombas de água, tornearia, geradores, oficina de montagem.">Conexiones hidráulicas, bombas de agua, tornería, generadores, taller de montaje.</p>
+                </div>
+                
+                <!-- Construcción -->
+                <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-hard-hat text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-es="Construcción" data-pt="Construção">Construcción</h3>
+                    </div>
+                    <p class="text-secondary" data-es="Hormigoneras, perforadoras, herramientas de seguridad, materiales eléctricos, hierros y herramientas." data-pt="Betoneiras, perfuradoras, ferramentas de segurança, materiais elétricos, ferros e ferramentas.">Hormigoneras, perforadoras, herramientas de seguridad, materiales eléctricos, hierros y herramientas.</p>
+                </div>
+                
+                <!-- Automotriz -->
+                <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-car text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-es="Automotriz" data-pt="Automotivo">Automotriz</h3>
+                    </div>
+                    <p class="text-secondary" data-es="Baterías, retenes, fusibles y lubricantes." data-pt="Baterias, retentores, fusíveis e lubrificantes.">Baterías, retenes, fusibles y lubricantes.</p>
+                </div>
+                
+                <!-- Aeronáutica -->
+                <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-plane text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-es="Aeronáutica" data-pt="Aeronáutica">Aeronáutica</h3>
+                    </div>
+                    <p class="text-secondary" data-es="Aceites, aditivos." data-pt="Óleos, aditivos.">Aceites, aditivos.</p>
+                </div>
+                
+                <!-- Repuestos -->
+                <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cogs text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-es="Repuestos" data-pt="Peças de reposição">Repuestos</h3>
+                    </div>
+                    <p class="text-secondary" data-es="Completo stock de repuestos para maquinarias y herramientas domésticas e Industrial." data-pt="Estoque completo de peças de reposição para máquinas e ferramentas domésticas e industriais.">Completo stock de repuestos para maquinarias y herramientas domésticas e Industrial.</p>
+                </div>
+                
+                <!-- Hogar -->
+                <div class="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-home text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold" data-es="Hogar" data-pt="Lar">Hogar</h3>
+                    </div>
+                    <p class="text-secondary" data-es="Pinturas, sanitaria, electricidad, herramientas, tornillería, adhesivos y artículos varios." data-pt="Tintas, sanitários, eletricidade, ferramentas, parafusos, adesivos e artigos diversos.">Pinturas, sanitaria, electricidad, herramientas, tornillería, adhesivos y artículos varios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="InmesaLogo.png" alt="Inmesa Digital Logo" class="h-10 w-auto mb-4 filter brightness-0 invert">
+                    <p class="text-gray-300" data-es="Líderes en herramientas  profesionales con más de 30 años de experiencia." data-pt="Líderes em ferramentas profissionais com mais de 30 anos de experiência.">Líderes en herramientas profesionales con más de 30 años de experiencia.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-es="Enlaces Rápidos" data-pt="Links Rápidos">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#inicio" class="hover:text-primary transition-colors" data-es="Inicio" data-pt="Início">Inicio</a></li>
+                        <li><a href="#por-que-elegirnos" class="hover:text-primary transition-colors" data-es="¿Por qué elegirnos?" data-pt="Por que nos escolher?">¿Por qué elegirnos?</a></li>
+                        <li><a href="#destacados" class="hover:text-primary transition-colors" data-es="Destacados" data-pt="Destaques">Destacados</a></li>
+                        <li><a href="#servicios" class="hover:text-primary transition-colors" data-es="Servicios" data-pt="Serviços">Servicios</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-es="Contacto" data-pt="Contato">Contacto</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-phone mr-2"></i> +598 91 079 154</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@inmesadigital.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> <span data-es="Pdte. Feliciano Alberto Viera 790" data-pt="Pdte. Feliciano Alberto Viera 790">Pdte. Feliciano Alberto Viera 790</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4" data-es="Síguenos" data-pt="Siga-nos">Síguenos</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/inmesa.srl" class="text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/inmesa_srl/" class="text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@inmesasrl42" class="text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-youtube text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+              <p data-es="© 2025 Inmesa S.R.L. Todos los derechos reservados." data-pt="© 2025 Inmesa Digital. Todos os direitos reservados.">&copy; 2025 Inmesa S.R.L. Todos los derechos reservados.</p>
+              <a href="https://www.linkedin.com/in/antonydsm/"> <p data-es="Creado por Antony da Silva." data-pt="Criado por Antony da Silva."> Creado por Antony da Silva.</p></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        const translations = {
+            es: {
+                'Inicio': 'Inicio',
+                'Productos': 'Productos',
+                'Destacados': 'Destacados',
+                'Servicios': 'Servicios',
+                'Contacto': 'Contacto',
+                '¿Por qué elegirnos?': '¿Por qué elegirnos?'
+            },
+            pt: {
+                'Inicio': 'Início',
+                'Productos': 'Produtos',
+                'Destacados': 'Destaques',
+                'Servicios': 'Serviços',
+                'Contacto': 'Contato',
+                '¿Por qué elegirnos?': 'Por que nos escolher?'
+            }
+        };
+
+        function switchLanguage(lang) {
+            document.documentElement.lang = lang;
+            
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-es][data-pt]').forEach(element => {
+                if (lang === 'es') {
+                    element.textContent = element.getAttribute('data-es');
+                } else if (lang === 'pt') {
+                    element.textContent = element.getAttribute('data-pt');
+                }
+            });
+        }
+
+        // Language selector event listener
+        document.getElementById('language-selector').addEventListener('change', function(e) {
+            switchLanguage(e.target.value);
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance carousel
+        setInterval(nextSlide, 6000);
+
+        // Carousel controls
+        document.querySelector('.carousel-next').addEventListener('click', nextSlide);
+        document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
+
+        // Carousel indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add active indicator styling and smooth transitions
+        const style = document.createElement('style');
+        style.textContent = `
+            .carousel-indicator.active {
+                opacity: 1 !important;
+            }
+            .carousel-slide {
+                opacity: 0;
+                transition: opacity 0.8s ease-in-out;
+            }
+            .carousel-slide.active {
+                opacity: 1;
+            }
+        `;
+        document.head.appendChild(style);
+
+// Modal functionality for product images
+const imageModal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const modalTitle = document.getElementById('modalTitle');
+const closeModal = document.getElementById('closeModal');
+const viewImageBtns = document.querySelectorAll('.view-image-btn');
+
+// Open modal when eye button is clicked
+viewImageBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        const imageSrc = this.getAttribute('data-image');
+        const imageTitle = this.getAttribute('data-title');
+        
+        modalImage.src = imageSrc;
+        modalTitle.textContent = imageTitle;
+        imageModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    });
+});
+
+// Close modal when X button is clicked
+closeModal.addEventListener('click', function() {
+    imageModal.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Restore scrolling
+});
+
+// Close modal when clicking outside the image
+imageModal.addEventListener('click', function(e) {
+    if (e.target === imageModal) {
+        imageModal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+        imageModal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+});
+    </script>
+</body>
+</html>
